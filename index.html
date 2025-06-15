@@ -1,18 +1,13 @@
 <!-- Unit 12 Project
 Requirements
-[  ] $() Select by Element, ID AND Class 
-[  ] Use Three Different jQuery Methods 
-[  ] Add Five CSS Declarations
-[  ] Include Three Images
+[x] $() Select by Element, ID AND Class 
+[x] Use Three Different jQuery Methods 
+[x] Add Five CSS Declarations
+[x] Include Three Images
 
-Select ONE Additional 
-[ no ] Feature 1 - Use .addClass() method
-[ no ] Feature 2 - Use a variable in javaScript 
-[ no ] Feature 3 - Use .mouseover() method
-[ no ] Feature 4 - Use .show() method
-[ no ] Feature 5 - Use .append() method
+Selected Additional Feature:
+[x] Feature 1 - Use .addClass() method
 -->
-
 
 <!DOCTYPE html>
 <html>
@@ -20,44 +15,95 @@ Select ONE Additional
     <meta charset="utf-8" />
     <title>Unit 12 Project</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+      body {
+        background-color: #f9f9f9;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+
+      button {
+        margin: 10px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        background-color: #e0e0e0;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background-color: #ccc;
+      }
+
+      img {
+        width: 200px;
+        margin: 10px;
+        border-radius: 10px;
+      }
+
+      .highlight {
+        font-weight: bold;
+        background-color: #fff3cd;
+        padding: 4px 6px;
+        border-radius: 4px;
+      }
+    </style>
   </head>
   <body>
     <button id="mem1-button">Memory #1</button>
     <button id="mem2-button">Memory #2</button>
     <button id="mem3-button">Memory #3</button>
-    <h1>My Top 3 Memories of <span>This Year</span></h1>
+
+    <h1>My Top 3 Memories of <span class="highlight">This Year</span></h1>
     <ol>
       <li>
-        <h3 id="mem1">Memory #1</h3>
-        <p>More about this memory.</p>
+        <h3 id="mem1">Junior Stretch Scene Performance</h3>
+        <p>I got to perform a dramatic scene that pushed my acting skills and creativity in front of an audience.</p>
+        <img src="https://cdn.glitch.global/f6c452a2-b883-4621-98cb-491d093abfe0/Screenshot%202025-06-15%20at%207.30.59%E2%80%AFPM.png?v=1750030275149">
       </li>
 
       <li>
-        <h3 id="mem2">Memory #2</h3>
-        <p>More about this memory.</p>
+        <h3 id="mem2">Trip to the Dominican Republic</h3>
+        <p>I visited the DR with friends and experienced the culture, beaches, and excursions. It was unforgettable!</p>
+        <img src="https://cdn.glitch.global/f6c452a2-b883-4621-98cb-491d093abfe0/IMG_2851.jpeg?v=1750030088776">
       </li>
 
       <li>
-        <h3 id="mem3">Memory #3</h3>
-        <p>More about this memory</p>
+        <h3 id="mem3">Women of Color Club Bake Sale</h3>
+        <p>Our club hosted a bake sale to raise money and awareness. It brought us together and supported a great cause.</p>
+        <img src="https://cdn.glitch.global/f6c452a2-b883-4621-98cb-491d093abfe0/P1040213.jpeg?v=1750030122907" alt="Bake Sale">
       </li>
     </ol>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
+      // jQuery ID selectors with .css()
       $("#mem1-button").click(function () {
-        $("#mem1").css("color", "purple");
+        $("#mem1").css("color", "pink");
       });
 
       $("#mem2-button").click(function () {
-        $("#mem2").css("color", "blue");
+        $("#mem2").fadeOut(500).fadeIn(500);
       });
 
       $("#mem3-button").click(function () {
-        $("#mem3").css("color", "green");
+        $("#mem3").addClass("highlight");
+      });
+
+      // Element selector example
+      $("h1").click(function () {
+        alert("You clicked the title!");
+      });
+
+      // Class selector example
+      $(".highlight").click(function () {
+        $(this).css("background-color", "#d4edda");
       });
     </script>
   </body>
 </html>
-
-<!--- Taken From Khan Academy HTML/JS: Making webpages interactive with jQuery-->
